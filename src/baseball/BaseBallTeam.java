@@ -1,14 +1,18 @@
 package baseball;
 
 public class BaseBallTeam {
+
+//    フィールド
     private String name;
     private int win;
     private int lose;
     private int draw;
 
     public BaseBallTeam() {
+
     }
 
+//    コンストラクタ
     public BaseBallTeam(String name, int win, int lose, int draw) {
         this.name = name;
         this.win = win;
@@ -16,6 +20,7 @@ public class BaseBallTeam {
         this.draw = draw;
     }
 
+//    setterメソッド
     public void setName(String name) {
         this.name = name;
     }
@@ -32,13 +37,14 @@ public class BaseBallTeam {
         this.draw = draw;
     }
 
+//    勝率計算
     public double getRate() {
-        double winningRate = (double) win / (win + lose);
-        return winningRate;
+        double winRate = (double) win / (win + lose);
+        return  winRate;
     }
 
-    public void report(double winnnigRate) {
-        System.out.println(name + "の2022年の成績は " + win + "勝 " + lose + "敗 " + draw + "分、" + "勝率は " + winnnigRate + "です。");
+//    表示
+    public void report() {
+        System.out.println(name +" の2022年の成績は " + win + "勝 " + lose + "敗 " + draw + "分、勝率は " + getRate() + "です。");
     }
-
 }
